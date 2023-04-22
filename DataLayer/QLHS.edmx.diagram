@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dbf96c5cfaba4d4bbb2f56a24787e629" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_ChucVu" Width="1.5" PointX="1.5" PointY="44.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_DanhMucLoi" Width="1.5" PointX="6" PointY="2.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_DanToc" Width="1.5" PointX="1.5" PointY="20.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_GiaoVien" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_HocKy" Width="1.5" PointX="0.75" PointY="33.5" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_HocSinh" Width="1.5" PointX="0.75" PointY="12" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_KetQua" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_KhoiLop" Width="1.5" PointX="8.75" PointY="4" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_Lop" Width="1.5" PointX="0.75" PointY="23.625" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_MonHoc" Width="1.5" PointX="0.75" PointY="37.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_NamHoc" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_TonGiao" Width="1.5" PointX="1.5" PointY="18.5" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_TrinhDo" Width="1.5" PointX="1.5" PointY="42.375" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_Truong" Width="1.5" PointX="1.5" PointY="29.125" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_User" Width="1.5" PointX="10.75" PointY="1" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_ViPham" Width="1.5" PointX="6" PointY="7.125" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_ViPham_CT" Width="1.5" PointX="8.25" PointY="7.875" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_GiaoVien_tb_ChucVu" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_ViPham_CT_tb_DanhMucLoi" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_HocSinh_tb_DanToc" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_GiaoVien_tb_TrinhDo" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_KetQua_tb_HocKy" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_ViPham_tb_HocKy" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_HocSinh_tb_TonGiao" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_KetQua_tb_HocSinh" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_ViPham_CT_tb_HocSinh" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_KetQua_tb_Lop" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_KetQua_tb_MonHoc" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_KetQua_tb_NamHoc" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_Lop_tb_Truong" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_ViPham_tb_Lop" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_ViPham_tb_NamHoc" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_ViPham_CT_tb_ViPham" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_GiaoVien_Lop" Width="1.5" PointX="4" PointY="16.375" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_GiaoVien_Lop_tb_GiaoVien" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_GiaoVien_Lop_tb_HocKy" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_GiaoVien_Lop_tb_Lop" />
+        <AssociationConnector Association="QUANLYHOCSINHModel.FK_tb_GiaoVien_Lop_tb_NamHoc" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_HocSinh_Lop_NamHoc" Width="1.5" PointX="10.375" PointY="6.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_GiaoVien_MonHoc" Width="1.5" PointX="10.375" PointY="9.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
