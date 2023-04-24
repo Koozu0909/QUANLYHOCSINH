@@ -82,6 +82,8 @@ namespace QUANLYHOCSINH
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.mnThongKeGVMon = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -127,10 +129,11 @@ namespace QUANLYHOCSINH
             this.mnChuyenLop,
             this.mnPhanLopGV,
             this.mnHSLop,
-            this.mnPhanMon});
+            this.mnPhanMon,
+            this.mnThongKeGVMon});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbon.MaxItemId = 42;
+            this.ribbon.MaxItemId = 43;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.lbFullname);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -499,7 +502,8 @@ namespace QUANLYHOCSINH
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup8,
-            this.ribbonPageGroup9});
+            this.ribbonPageGroup9,
+            this.ribbonPageGroup7});
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Thống Kê";
             // 
@@ -531,6 +535,21 @@ namespace QUANLYHOCSINH
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.mnThongKeGVMon);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "Giáo Viên";
+            // 
+            // mnThongKeGVMon
+            // 
+            this.mnThongKeGVMon.Caption = "Giáo Viên Theo Môn";
+            this.mnThongKeGVMon.Id = 42;
+            this.mnThongKeGVMon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("mnThongKeGVMon.ImageOptions.Image")));
+            this.mnThongKeGVMon.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("mnThongKeGVMon.ImageOptions.LargeImage")));
+            this.mnThongKeGVMon.Name = "mnThongKeGVMon";
+            this.mnThongKeGVMon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnThongKeGVMon_ItemClick);
             // 
             // MainForm
             // 
@@ -608,5 +627,7 @@ namespace QUANLYHOCSINH
         private DevExpress.XtraBars.BarButtonItem mnHSLop;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.BarButtonItem mnPhanMon;
+        private DevExpress.XtraBars.BarButtonItem mnThongKeGVMon;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
     }
 }

@@ -198,5 +198,35 @@ namespace QUANLYHOCSINH
                 Console.WriteLine(_id);
             }
         }
+
+        private void gvHocSinhLop_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column.Name == "GioiTinhLop")
+            {
+                if (int.Parse(e.CellValue.ToString()) == 0)
+                {
+                    e.DisplayText = "Nữ";
+                }
+                else
+                {
+                    e.DisplayText = "Nam";
+                }
+            }
+        }
+
+        private void gvHocSinh_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column.Name == "GioiTinh")
+            {
+                if (int.Parse(e.CellValue.ToString()) == 0)
+                {
+                    e.DisplayText = "Nữ";
+                }
+                else
+                {
+                    e.DisplayText = "Nam";
+                }
+            }
+        }
     }
 }

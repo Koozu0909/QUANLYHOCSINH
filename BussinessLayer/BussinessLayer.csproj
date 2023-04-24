@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CHUCVU.cs" />
+    <Compile Include="DTO\GV_MonCountDTO.cs" />
     <Compile Include="DTO\HS_CountDTO.cs" />
     <Compile Include="DTO\tb_GiaoVien_LopDTO.cs" />
     <Compile Include="DTO\tb_GiaoVien_MonDTO.cs" />

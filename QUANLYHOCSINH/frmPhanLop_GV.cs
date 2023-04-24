@@ -29,6 +29,7 @@ namespace QUANLYHOCSINH
         private GIAOVIEN_LOP _giaovien_lop;
         private HOCKY _hocky;
         private GIAOVIEN _giaovien;
+        private GIAOVIEN_MONHOC _giaovien_mon;
         private int _idGV;
         private int _idGV_Lop;
         private bool _them;
@@ -43,6 +44,7 @@ namespace QUANLYHOCSINH
             _giaovien_lop = new GIAOVIEN_LOP();
             _hocky = new HOCKY();
             _giaovien = new GIAOVIEN();
+            _giaovien_mon = new GIAOVIEN_MONHOC();
             loadData();
             loadGV();
             showHide(true);
@@ -117,9 +119,19 @@ namespace QUANLYHOCSINH
 
         private void loadGV()
         {
-            var lstGV = _giaovien.getList();
-            gcGiaoVien.DataSource = lstGV.ToList();
-            gvGiaoVien.OptionsBehavior.Editable = false;
+
+            int mamonhoc;
+            if (int.TryParse(cboMonHoc.SelectedValue.ToString(), out mamonhoc))
+            {
+                var lstGV = _giaovien_mon.getListBy(mamonhoc);
+                gcGiaoVien.DataSource = lstGV.ToList();
+                gvGiaoVien.OptionsBehavior.Editable = false;
+            }
+            else
+            {
+                // Không làm gì nếu giá trị được chọn không phải là một chuỗi số hợp lệ
+            }
+          
         }
         private void loadGV_Lop()
         {
@@ -388,6 +400,11 @@ namespace QUANLYHOCSINH
             }
 
             loadGV_Lop();
+        }
+
+        private void cboMonHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadGV();
         }
     }
 }

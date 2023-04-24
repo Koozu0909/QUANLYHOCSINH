@@ -37,6 +37,7 @@ namespace QUANLYHOCSINH
             this.btnDong = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -49,6 +50,8 @@ namespace QUANLYHOCSINH
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.cboNamHoc = new System.Windows.Forms.ComboBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnXoaHS = new System.Windows.Forms.Button();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.gcHocSinh = new DevExpress.XtraGrid.GridControl();
@@ -68,9 +71,6 @@ namespace QUANLYHOCSINH
             this.MaLop = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenLop = new DevExpress.XtraGrid.Columns.GridColumn();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXoaHS = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -157,6 +157,16 @@ namespace QUANLYHOCSINH
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuy_ItemClick);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Caption = "Lưu";
+            this.btnLuu.Id = 10;
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
+            this.btnLuu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.LargeImage")));
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnLuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLuu_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -274,6 +284,29 @@ namespace QUANLYHOCSINH
             this.splitContainer1.SplitterDistance = 103;
             this.splitContainer1.TabIndex = 9;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(645, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 16);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Xóa Học Sinh Đã Phân Lớp";
+            // 
+            // btnXoaHS
+            // 
+            this.btnXoaHS.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnXoaHS.FlatAppearance.BorderSize = 50;
+            this.btnXoaHS.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnXoaHS.ForeColor = System.Drawing.Color.Red;
+            this.btnXoaHS.Location = new System.Drawing.Point(668, 60);
+            this.btnXoaHS.Name = "btnXoaHS";
+            this.btnXoaHS.Size = new System.Drawing.Size(115, 23);
+            this.btnXoaHS.TabIndex = 14;
+            this.btnXoaHS.Text = "Xóa Học Sinh";
+            this.btnXoaHS.UseVisualStyleBackColor = true;
+            this.btnXoaHS.Click += new System.EventHandler(this.btnXoaHS_Click);
+            // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -327,6 +360,7 @@ namespace QUANLYHOCSINH
             this.gvHocSinh.OptionsSelection.MultiSelect = true;
             this.gvHocSinh.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gvHocSinh.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.True;
+            this.gvHocSinh.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvHocSinh_CustomDrawCell);
             // 
             // MaHS
             // 
@@ -407,6 +441,7 @@ namespace QUANLYHOCSINH
             this.TenLop});
             this.gvHocSinhLop.GridControl = this.gcHocSinhLop;
             this.gvHocSinhLop.Name = "gvHocSinhLop";
+            this.gvHocSinhLop.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvHocSinhLop_CustomDrawCell);
             this.gvHocSinhLop.Click += new System.EventHandler(this.gvHocSinhLop_Click);
             // 
             // MaHSLop
@@ -483,39 +518,6 @@ namespace QUANLYHOCSINH
             this.TenLop.Visible = true;
             this.TenLop.VisibleIndex = 5;
             this.TenLop.Width = 80;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Caption = "Lưu";
-            this.btnLuu.Id = 10;
-            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
-            this.btnLuu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.LargeImage")));
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnLuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLuu_ItemClick);
-            // 
-            // btnXoaHS
-            // 
-            this.btnXoaHS.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btnXoaHS.FlatAppearance.BorderSize = 50;
-            this.btnXoaHS.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnXoaHS.ForeColor = System.Drawing.Color.Red;
-            this.btnXoaHS.Location = new System.Drawing.Point(668, 60);
-            this.btnXoaHS.Name = "btnXoaHS";
-            this.btnXoaHS.Size = new System.Drawing.Size(115, 23);
-            this.btnXoaHS.TabIndex = 14;
-            this.btnXoaHS.Text = "Xóa Học Sinh";
-            this.btnXoaHS.UseVisualStyleBackColor = true;
-            this.btnXoaHS.Click += new System.EventHandler(this.btnXoaHS_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(645, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 16);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Xóa Học Sinh Đã Phân Lớp";
             // 
             // frmPhanLop
             // 

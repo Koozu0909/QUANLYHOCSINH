@@ -148,7 +148,7 @@ namespace QUANLYHOCSINH
             // HoTen
             // 
             this.HoTen.Caption = "Họ Tên";
-            this.HoTen.FieldName = "HoTen";
+            this.HoTen.FieldName = "HoTenGV";
             this.HoTen.MaxWidth = 120;
             this.HoTen.MinWidth = 120;
             this.HoTen.Name = "HoTen";
@@ -499,6 +499,7 @@ namespace QUANLYHOCSINH
             this.cboMonHoc.Name = "cboMonHoc";
             this.cboMonHoc.Size = new System.Drawing.Size(202, 24);
             this.cboMonHoc.TabIndex = 27;
+            this.cboMonHoc.SelectedIndexChanged += new System.EventHandler(this.cboMonHoc_SelectedIndexChanged);
             // 
             // labelControl2
             // 

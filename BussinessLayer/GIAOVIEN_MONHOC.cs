@@ -21,19 +21,46 @@ namespace BussinessLayer
         {
             return db.tb_GiaoVien_MonHoc.FirstOrDefault(x => x.MaGV_MH == idGV_Mh);
         }
-        public List<HS_CountDTO> getSoLuongHS_TungLop(int manamhoc, int makhoilop)
+        public List<GV_MonCountDTO> getSoLuongGV_TungMon(int manamhoc)
         {
-            var lst = db.tb_HocSinh_Lop_NamHoc.Where(x => x.MaNamHoc == manamhoc && x.MaKhoiLop == makhoilop).GroupBy(x => x.MaLop)
-                                              .Select(g => new { MaLop = g.Key, SoLuong = g.Count() }).ToList();
-            List<HS_CountDTO> lstDTO = new List<HS_CountDTO>();
-            HS_CountDTO dto;
+            var lst = db.tb_GiaoVien_MonHoc.Where(x => x.MaNamHoc == manamhoc).GroupBy(x => x.MaMH)
+                                              .Select(g => new { MaMH = g.Key, SoLuong = g.Count() }).ToList();
+            List<GV_MonCountDTO> lstDTO = new List<GV_MonCountDTO>();
+            GV_MonCountDTO dto;
             foreach (var item in lst)
             {
-                dto = new HS_CountDTO();
-                dto.MaLop = item.MaLop;
-                var lop = db.tb_Lop.FirstOrDefault(x => x.MaLop == item.MaLop);
-                dto.TenLop = lop.TenLop;
-                dto.SoLuongHS = item.SoLuong;
+                dto = new GV_MonCountDTO();
+                dto.MaMH = (int)item.MaMH;
+                var mh = db.tb_MonHoc.FirstOrDefault(x => x.MaMH == item.MaMH);
+                dto.TenMH = mh.TenMH;
+                dto.SoLuongGV = item.SoLuong;
+                lstDTO.Add(dto);
+            }
+            return lstDTO;
+        }
+        public List<tb_GiaoVien_MonDTO> getListBy( int mamonhoc)
+        {
+            var lst = db.tb_GiaoVien_MonHoc.Where(x => x.MaMH == mamonhoc).ToList();
+            List<tb_GiaoVien_MonDTO> lstDTO = new List<tb_GiaoVien_MonDTO>();
+            tb_GiaoVien_MonDTO dto;
+            foreach (var item in lst)
+            {
+                dto = new tb_GiaoVien_MonDTO();
+                dto.MaGV_MH = item.MaGV_MH;
+                dto.MaGV = item.MaGV;
+                var hs = db.tb_GiaoVien.FirstOrDefault(x => x.MaGV == item.MaGV);
+                dto.HoTenGV = hs.HoTen;
+                dto.GioiTinh = hs.GioiTinh;
+                dto.MaTrinhDo = hs.MaTrinhDo;
+                dto.NgaySinh = hs.NgaySinh;
+                var td = db.tb_TrinhDo.FirstOrDefault(x => x.MaTrinhDo == hs.MaTrinhDo);
+                dto.TenTrinhDo = td.TenTrinhDo;
+                dto.DiaChi = hs.DiaChi;
+                dto.MaMH = item.MaMH;
+                var mh = db.tb_MonHoc.FirstOrDefault(x => x.MaMH == item.MaMH);
+                dto.TenMH = mh.TenMH;
+                dto.MaNamHoc = item.MaNamHoc;
+                dto.GhiChu = item.GhiChu;
                 lstDTO.Add(dto);
             }
             return lstDTO;

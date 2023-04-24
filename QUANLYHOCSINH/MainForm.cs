@@ -140,5 +140,11 @@ namespace QUANLYHOCSINH
             openForm(typeof(frmPhanMon));
 
         }
+
+        private void mnThongKeGVMon_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmThongKeGVMon));
+
+        }
     }
 }

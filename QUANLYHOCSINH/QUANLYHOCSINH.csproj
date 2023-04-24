@@ -192,6 +192,12 @@
     <Compile Include="frmQLViPham.Designer.cs">
       <DependentUpon>frmQLViPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThongKeGVMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongKeGVMon.Designer.cs">
+      <DependentUpon>frmThongKeGVMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThongKeHSLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLViPham.resx">
       <DependentUpon>frmQLViPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKeGVMon.resx">
+      <DependentUpon>frmThongKeGVMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongKeHSLop.resx">
       <DependentUpon>frmThongKeHSLop.cs</DependentUpon>

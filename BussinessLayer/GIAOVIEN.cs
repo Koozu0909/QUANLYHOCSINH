@@ -57,7 +57,6 @@ namespace BussinessLayer
             }
             return lsGV;
         }
-
         public List<tb_GiaoVienDTO> getList()
         {
             var lst = db.tb_GiaoVien.ToList();
